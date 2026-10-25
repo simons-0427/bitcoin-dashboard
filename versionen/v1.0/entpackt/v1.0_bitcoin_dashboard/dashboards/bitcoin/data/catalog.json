@@ -1,0 +1,729 @@
+{
+  "version": 2,
+  "status": "active-core",
+  "overviewIds": [
+    "price_usd",
+    "return_7d",
+    "market_cap_usd",
+    "drawdown_ath",
+    "mvrv_ratio",
+    "transactions_count",
+    "hashrate_eh_s",
+    "fees_average_usd",
+    "exchange_netflow_btc",
+    "fear_greed_index"
+  ],
+  "categories": [
+    {
+      "id": "market",
+      "label": "Markt und Bewertung"
+    },
+    {
+      "id": "performance",
+      "label": "Rendite und Risiko"
+    },
+    {
+      "id": "network",
+      "label": "Netzwerkaktivität"
+    },
+    {
+      "id": "supply",
+      "label": "Angebot und Halter"
+    },
+    {
+      "id": "mining",
+      "label": "Mining und Sicherheit"
+    },
+    {
+      "id": "fees",
+      "label": "Gebühren und Mempool"
+    },
+    {
+      "id": "institutional",
+      "label": "Institutionen und Derivate"
+    },
+    {
+      "id": "macro",
+      "label": "Makro und Vergleiche"
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning"
+    }
+  ],
+  "metrics": [
+    {
+      "id": "price_usd",
+      "label": "Bitcoin-Preis",
+      "unit": "USD/BTC",
+      "category": "market",
+      "frequency": "daily",
+      "sourceHint": "Preisfeed / Backtester",
+      "description": "Täglicher Referenzpreis in US-Dollar."
+    },
+    {
+      "id": "price_eur",
+      "label": "Bitcoin-Preis in Euro",
+      "unit": "EUR/BTC",
+      "category": "market",
+      "frequency": "daily",
+      "sourceHint": "Coin Metrics PriceUSD + ECB USD je EUR",
+      "description": "BTC/USD geteilt durch den ECB-Referenzkurs USD je EUR. Der letzte vorherige ECB-Geschäftstagskurs gilt über Wochenenden und Feiertage höchstens sieben Kalendertage."
+    },
+    {
+      "id": "market_cap_usd",
+      "label": "Marktkapitalisierung",
+      "unit": "USD",
+      "category": "market",
+      "frequency": "daily",
+      "sourceHint": "Aus BTC-Preis und Umlaufmenge berechnet",
+      "description": "Täglicher USD-Referenzpreis multipliziert mit der gemeldeten umlaufenden BTC-Menge."
+    },
+    {
+      "id": "market_cap_estimated_usd",
+      "label": "Geschätzte Marktkapitalisierung",
+      "unit": "USD",
+      "category": "market",
+      "frequency": "daily",
+      "sourceHint": "Coin Metrics Community API (CC BY-NC 4.0): CapMrktEstUSD",
+      "description": "Preis mal geschätzte zirkulierende BTC-Menge. Coin Metrics verwendet den täglichen PriceUSD-Schluss um 00:00 UTC und eine über Drittquellen gemeldete Umlaufmenge. Das ist nicht die unabhängig aus der Bitcoin-Blockchain gezählte Gesamtmenge."
+    },
+    {
+      "id": "realized_cap_usd",
+      "label": "Realisierte Marktkapitalisierung",
+      "unit": "USD",
+      "category": "market",
+      "frequency": "daily",
+      "sourceHint": "Aus Marktkapitalisierung und Coin Metrics MVRV berechnet",
+      "description": "Marktkapitalisierung geteilt durch das importierte Coin Metrics MVRV. Das ist eine algebraische Ableitung, keine unabhängige UTXO-Neuberechnung."
+    },
+    {
+      "id": "spot_volume_usd",
+      "label": "Gemeldetes Spot-Handelsvolumen",
+      "unit": "USD/Tag",
+      "category": "market",
+      "frequency": "daily",
+      "sourceHint": "Börsenaggregator",
+      "description": "Von Coin Metrics aggregiertes gemeldetes Spotvolumen. Kein garantiert bereinigtes oder vollständiges Gesamtmarktvolumen."
+    },
+    {
+      "id": "mvrv_ratio",
+      "label": "MVRV-Verhältnis",
+      "unit": "Verhältnis",
+      "category": "market",
+      "frequency": "daily",
+      "sourceHint": "On-Chain-Anbieter",
+      "description": "Marktkapitalisierung geteilt durch realisierte Marktkapitalisierung."
+    },
+    {
+      "id": "puell_multiple",
+      "label": "Puell Multiple",
+      "unit": "Verhältnis",
+      "category": "market",
+      "frequency": "daily",
+      "sourceHint": "Aus täglicher Ausgabe und BTC-Preis berechnet",
+      "description": "Täglicher USD-Wert der neu ausgegebenen BTC geteilt durch seinen gleitenden 365-Tage-Durchschnitt."
+    },
+    {
+      "id": "return_1d",
+      "label": "Rendite 1 Tag",
+      "unit": "%",
+      "category": "performance",
+      "frequency": "daily",
+      "sourceHint": "Aus BTC-Preis abgeleitet",
+      "description": "Prozentuale Änderung gegenüber dem letzten verfügbaren UTC-Tag."
+    },
+    {
+      "id": "return_7d",
+      "label": "Rendite 7 Tage",
+      "unit": "%",
+      "category": "performance",
+      "frequency": "daily",
+      "sourceHint": "Aus BTC-Preis abgeleitet",
+      "description": "Prozentuale Preisänderung über sieben Kalendertage."
+    },
+    {
+      "id": "return_30d",
+      "label": "Rendite 30 Tage",
+      "unit": "%",
+      "category": "performance",
+      "frequency": "daily",
+      "sourceHint": "Aus BTC-Preis abgeleitet",
+      "description": "Prozentuale Preisänderung über 30 Kalendertage."
+    },
+    {
+      "id": "return_1y",
+      "label": "Rendite 1 Jahr",
+      "unit": "%",
+      "category": "performance",
+      "frequency": "daily",
+      "sourceHint": "Aus BTC-Preis abgeleitet",
+      "description": "Prozentuale Preisänderung gegenüber dem Vorjahr."
+    },
+    {
+      "id": "volatility_30d",
+      "label": "Volatilität 30 Tage",
+      "unit": "% p.a.",
+      "category": "performance",
+      "frequency": "daily",
+      "sourceHint": "Aus BTC-Preis abgeleitet",
+      "description": "Annualisierte Standardabweichung täglicher Log-Renditen über 30 Tage."
+    },
+    {
+      "id": "volatility_90d",
+      "label": "Volatilität 90 Tage",
+      "unit": "% p.a.",
+      "category": "performance",
+      "frequency": "daily",
+      "sourceHint": "Aus BTC-Preis abgeleitet",
+      "description": "Annualisierte Standardabweichung täglicher Log-Renditen über 90 Tage."
+    },
+    {
+      "id": "drawdown_ath",
+      "label": "Abstand zum Allzeithoch",
+      "unit": "%",
+      "category": "performance",
+      "frequency": "daily",
+      "sourceHint": "Aus BTC-Preis abgeleitet",
+      "description": "Prozentualer Abstand zum bis dahin erreichten Höchstpreis."
+    },
+    {
+      "id": "transactions_count",
+      "label": "Transaktionen pro Tag",
+      "unit": "Transaktionen",
+      "category": "network",
+      "frequency": "daily",
+      "sourceHint": "Bitcoin-Blockchain / Coin Metrics",
+      "description": "Bestätigte Transaktionen pro UTC-Tag."
+    },
+    {
+      "id": "active_addresses",
+      "label": "Aktive Adressen",
+      "unit": "Adressen",
+      "category": "network",
+      "frequency": "daily",
+      "sourceHint": "Coin Metrics",
+      "description": "Adressen mit beobachteter Aktivität, keine eindeutigen Personen."
+    },
+    {
+      "id": "utxo_count",
+      "label": "UTXO-Anzahl",
+      "unit": "UTXO",
+      "category": "network",
+      "frequency": "daily",
+      "sourceHint": "Open Bitcoin Metrics (OBM); separate Firsthand Bitcoin UTXO count",
+      "description": "Anzahl spendbarer UTXOs nach dem letzten dem UTC-Tag zugeordneten Block. Ohne Block an diesem Tag ist der Wert undefiniert. Die separate firsthand_daily-Reihe von Firsthand Bitcoin zählt ebenfalls unspent transaction outputs, weicht aber von Open Bitcoin Metrics ab und wird nicht in main gemischt. Firsthand ist mit Quellenlink frei nutzbar.",
+      "acceptsSourceGaps": true
+    },
+    {
+      "id": "block_weight_mwu",
+      "label": "Blockgewicht",
+      "unit": "MWU/Tag",
+      "category": "network",
+      "frequency": "daily",
+      "sourceHint": "Open Bitcoin Metrics (OBM)",
+      "description": "Summe der Blockgewichte pro UTC-Tag. Der OBM-Wert wird von WU in MWU umgerechnet."
+    },
+    {
+      "id": "supply_btc",
+      "label": "Umlaufmenge",
+      "unit": "BTC",
+      "category": "supply",
+      "frequency": "daily",
+      "sourceHint": "Bitcoin-Blockchain / Coin Metrics",
+      "description": "Bis zum Tagesende erzeugte Bitcoin abzüglich nachweisbarer Sonderfälle gemäß Methodik."
+    },
+    {
+      "id": "issued_btc_daily",
+      "label": "Neu ausgegebene Bitcoin",
+      "unit": "BTC/Tag",
+      "category": "supply",
+      "frequency": "daily",
+      "sourceHint": "Coin Metrics Blockzählung + Bitcoin-Protokoll",
+      "description": "Summe der konsensgültigen Blocksubventionen je UTC-Tag, über die 210.000-Block-Halbierungen berechnet und mit Coin Metrics IssTotNtv historisch abgeglichen."
+    },
+    {
+      "id": "issued_usd_daily",
+      "label": "Tägliche Bitcoin-Ausgabe in USD",
+      "unit": "USD/Tag",
+      "category": "supply",
+      "frequency": "daily",
+      "sourceHint": "Coin Metrics Community API (CC BY-NC 4.0): IssTotUSD",
+      "description": "USD-Wert der täglich neu ausgegebenen BTC. Bruttoausgabe; Transaktionsgebühren sind ausgeschlossen und Ausgaben werden nicht um Burns reduziert."
+    },
+    {
+      "id": "projected_supply_10y_btc",
+      "label": "Projiziertes Bitcoin-Angebot in 10 Jahren",
+      "unit": "BTC",
+      "category": "supply",
+      "frequency": "daily",
+      "sourceHint": "Coin Metrics Community API (CC BY-NC 4.0): SplyExpFut10yr",
+      "description": "Aktuelles Angebot plus die über die nächsten zehn Jahre erwartete Ausgabe, wenn der bekannte aktuelle Bitcoin-Ausgabeplan fortgeführt wird. Künftige, noch nicht aktivierte Protokolländerungen sind nicht berücksichtigt."
+    },
+    {
+      "id": "inflation_rate_pct",
+      "label": "Angebotsinflation",
+      "unit": "% p.a.",
+      "category": "supply",
+      "frequency": "daily",
+      "sourceHint": "Aus BTC-Ausgabe abgeleitet",
+      "description": "Annualisierte neue Ausgabe relativ zur umlaufenden Menge."
+    },
+    {
+      "id": "exchange_balance_btc",
+      "label": "Börsenbestände",
+      "unit": "BTC",
+      "category": "supply",
+      "frequency": "daily",
+      "sourceHint": "Adresslabel-Anbieter",
+      "description": "Geschätzte BTC-Bestände bekannter Börsenadressen."
+    },
+    {
+      "id": "exchange_netflow_btc",
+      "label": "Börsen-Nettofluss",
+      "unit": "BTC/Tag",
+      "category": "supply",
+      "frequency": "daily",
+      "sourceHint": "Adresslabel-Anbieter",
+      "description": "Einzahlungen minus Auszahlungen an bekannte Börsenadressen."
+    },
+    {
+      "id": "hashrate_eh_s",
+      "label": "Geschätzte Hashrate",
+      "unit": "EH/s",
+      "category": "mining",
+      "frequency": "daily",
+      "sourceHint": "Mempool / Coin Metrics",
+      "description": "Aus Blockabständen und Schwierigkeit geschätzte Rechenleistung."
+    },
+    {
+      "id": "difficulty",
+      "label": "Mining-Schwierigkeit am Tagesende",
+      "unit": "Difficulty",
+      "category": "mining",
+      "frequency": "daily",
+      "sourceHint": "Open Bitcoin Metrics, obm_difficulty_eod_daily",
+      "description": "Difficulty des höchstgelegenen Blocks, dessen Zeitstempel zum jeweiligen UTC-Tag gehört. OBM-Tagesendwert; die bisherige Tagesmittelschätzung bleibt getrennt archiviert. Undefinierte Tage bleiben leer.",
+      "acceptsSourceGaps": true,
+      "series": [
+        {
+          "key": "main",
+          "label": "OBM Difficulty, UTC-Tagesende v1"
+        },
+        {
+          "key": "coinmetrics_daily_mean_v1",
+          "label": "Archiv: geschätztes Tagesmittel v1"
+        }
+      ]
+    },
+    {
+      "id": "blocks_count",
+      "label": "Blöcke pro Tag",
+      "unit": "Blöcke",
+      "category": "mining",
+      "frequency": "daily",
+      "sourceHint": "Bitcoin-Blockchain",
+      "description": "Bestätigte Blöcke pro UTC-Tag."
+    },
+    {
+      "id": "block_reward_btc",
+      "label": "Blocksubvention",
+      "unit": "BTC/Block",
+      "category": "mining",
+      "frequency": "daily",
+      "sourceHint": "Bitcoin-Protokoll",
+      "description": "Gültige Subvention am Tagesende, inklusive Halbierungsgrenzen."
+    },
+    {
+      "id": "miner_revenue_usd",
+      "label": "Miner-Einnahmen",
+      "unit": "USD/Tag",
+      "category": "mining",
+      "frequency": "daily",
+      "sourceHint": "On-Chain und Preis",
+      "description": "Blocksubvention und Transaktionsgebühren, mit historischem Preis bewertet."
+    },
+    {
+      "id": "fee_share_miner_revenue_pct",
+      "label": "Gebührenanteil an Miner-Einnahmen",
+      "unit": "%",
+      "category": "mining",
+      "frequency": "daily",
+      "sourceHint": "Bitcoin-Blockchain",
+      "description": "Transaktionsgebühren geteilt durch gesamte Miner-Einnahmen in BTC."
+    },
+    {
+      "id": "hashprice_usd_ph_day",
+      "label": "Hashprice",
+      "unit": "USD/PH/Tag",
+      "category": "mining",
+      "frequency": "daily",
+      "sourceHint": "Mining-Anbieter",
+      "description": "Geschätzte Erlöse je Petahash und Tag, nach dokumentierter Methodik."
+    },
+    {
+      "id": "fees_total_btc",
+      "label": "Transaktionsgebühren gesamt",
+      "unit": "BTC/Tag",
+      "category": "fees",
+      "frequency": "daily",
+      "sourceHint": "Bitcoin-Blockchain / Coin Metrics",
+      "description": "Summe der Gebühren aller bestätigten Transaktionen pro Tag."
+    },
+    {
+      "id": "fees_average_usd",
+      "label": "Durchschnittliche Transaktionsgebühr",
+      "unit": "USD",
+      "category": "fees",
+      "frequency": "daily",
+      "sourceHint": "On-Chain und Preis",
+      "description": "Gesamtgebühren geteilt durch bestätigte Transaktionen, in USD."
+    },
+    {
+      "id": "futures_open_interest_usd",
+      "label": "CFTC Bitcoin-Futures Open Interest",
+      "unit": "USD (Nominalwert)",
+      "category": "institutional",
+      "frequency": "weekly",
+      "calendarType": "native_periods",
+      "acceptsSourceGaps": true,
+      "sourceHint": "CFTC Legacy COT, wöchentliche Berichte",
+      "description": "Geschätzter USD-Nominalwert der von CFTC gemeldeten CBOE-/CME-Bitcoin-Futures. Wöchentlicher Berichtstag; kein weltweites tägliches Open Interest."
+    },
+    {
+      "id": "fear_greed_index",
+      "label": "Fear & Greed Index",
+      "unit": "Index",
+      "category": "institutional",
+      "frequency": "daily",
+      "sourceHint": "Alternative.me, direkte kostenlose API",
+      "description": "Täglicher Fear & Greed Index von Alternative.me, 0 bis 100. Direkte Historie seit Februar 2018; fehlende Tage bleiben leer. Frühere OpenBitcoin-Werte bleiben als getrennte Archivreihe erhalten.",
+      "acceptsSourceGaps": true,
+      "series": [
+        {
+          "key": "main",
+          "label": "Alternative.me, direkte Tagesreihe"
+        },
+        {
+          "key": "openbitcoin_legacy",
+          "label": "Archiv: OpenBitcoin-Zwischenquelle"
+        }
+      ]
+    },
+    {
+      "id": "realized_price_usd",
+      "label": "Realisierter Preis",
+      "unit": "USD/BTC",
+      "category": "market",
+      "frequency": "daily",
+      "sourceHint": "Aus On-Chain-Daten abgeleitet",
+      "description": "Realisierte Marktkapitalisierung geteilt durch die Umlaufmenge."
+    },
+    {
+      "id": "nupl_pct",
+      "label": "Netto nicht realisierter Gewinn/Verlust",
+      "unit": "%",
+      "category": "market",
+      "frequency": "daily",
+      "sourceHint": "Aus Markt- und realisierter Kapitalisierung",
+      "description": "Marktkapitalisierung abzüglich realisierter Kapitalisierung, geteilt durch die Marktkapitalisierung."
+    },
+    {
+      "id": "price_sma_200d_usd",
+      "label": "200-Tage-Durchschnittspreis",
+      "unit": "USD/BTC",
+      "category": "market",
+      "frequency": "daily",
+      "sourceHint": "Aus täglichem BTC-Preis abgeleitet",
+      "description": "Gleitender arithmetischer Mittelwert der letzten 200 Tagespreise."
+    },
+    {
+      "id": "mayer_multiple",
+      "label": "Mayer Multiple",
+      "unit": "Verhältnis",
+      "category": "market",
+      "frequency": "daily",
+      "sourceHint": "BTC-Preis und 200-Tage-Durchschnitt",
+      "description": "Tagespreis geteilt durch den gleitenden 200-Tage-Durchschnitt."
+    },
+    {
+      "id": "return_90d",
+      "label": "Rendite 90 Tage",
+      "unit": "%",
+      "category": "performance",
+      "frequency": "daily",
+      "sourceHint": "Aus BTC-Preis abgeleitet",
+      "description": "Preisänderung gegenüber dem Preis vor 90 Kalendertagen."
+    },
+    {
+      "id": "cagr_3y_pct",
+      "label": "Jahresrendite 3 Jahre",
+      "unit": "% p.a.",
+      "category": "performance",
+      "frequency": "daily",
+      "sourceHint": "Aus BTC-Preis abgeleitet",
+      "description": "Geometrisch annualisierte Rendite zwischen dem Tagespreis und dem Preis am passenden Kalendertag vor drei Jahren."
+    },
+    {
+      "id": "coin_days_destroyed",
+      "label": "Zerstörte Coin-Tage",
+      "unit": "BTC-Tage/Tag",
+      "category": "supply",
+      "frequency": "daily",
+      "sourceHint": "Open Bitcoin Metrics (OBM)",
+      "description": "Summe des BTC-Werts jedes ausgegebenen Outputs multipliziert mit dessen Alter in Tagen. Unbereinigte On-Chain-Reihe."
+    },
+    {
+      "id": "average_coin_dormancy_days",
+      "label": "Durchschnittliche Coin-Ruhezeit",
+      "unit": "Tage",
+      "category": "supply",
+      "frequency": "daily",
+      "sourceHint": "Open Bitcoin Metrics (OBM)",
+      "description": "Zerstörte Coin-Tage geteilt durch den BTC-Wert aller an diesem Tag ausgegebenen vorherigen Outputs. Nicht definiert, wenn kein BTC-Wert ausgegeben wurde.",
+      "acceptsSourceGaps": true
+    },
+    {
+      "id": "blocks_until_halving",
+      "label": "Blöcke bis zur nächsten Halbierung",
+      "unit": "Blöcke",
+      "category": "mining",
+      "frequency": "daily",
+      "sourceHint": "Blockhöhe und Bitcoin-Protokoll",
+      "description": "Verbleibende Blöcke bis zur nächsten Subventionshalbierung nach Protokollregel."
+    },
+    {
+      "id": "block_interval_7d_min",
+      "label": "Blockabstand 7 Tage",
+      "unit": "Minuten",
+      "category": "mining",
+      "frequency": "daily",
+      "sourceHint": "Bitcoin-Blockchain",
+      "description": "Mittlerer Zeitabstand bestätigter Blöcke im rollierenden Sieben-Tage-Fenster."
+    },
+    {
+      "id": "addresses_nonzero_balance",
+      "label": "Adressen mit Guthaben",
+      "unit": "Adressen",
+      "category": "network",
+      "frequency": "daily",
+      "sourceHint": "Coin Metrics Community AdrBalCnt",
+      "description": "Tägliche Anzahl Bitcoin-Adressen mit positivem Kontostand. Eine Adresse ist keine Person und Wallet-Aufteilung bleibt unberücksichtigt."
+    },
+    {
+      "id": "exchange_inflow_btc",
+      "label": "Börsenzufluss",
+      "unit": "BTC/Tag",
+      "category": "supply",
+      "frequency": "daily",
+      "sourceHint": "Coin Metrics Community FlowInExNtv",
+      "description": "Täglicher BTC-Zufluss zu von Coin Metrics identifizierten Börsenadressen; Label-Abdeckung und Methodik können sich ändern."
+    },
+    {
+      "id": "exchange_outflow_btc",
+      "label": "Börsenabfluss",
+      "unit": "BTC/Tag",
+      "category": "supply",
+      "frequency": "daily",
+      "sourceHint": "Coin Metrics Community FlowOutExNtv",
+      "description": "Täglicher BTC-Abfluss von identifizierten Börsenadressen; Label-Abdeckung und Methodik können sich ändern."
+    },
+    {
+      "id": "exchange_inflow_usd",
+      "label": "Börsenzufluss USD",
+      "unit": "USD/Tag",
+      "category": "supply",
+      "frequency": "daily",
+      "sourceHint": "Coin Metrics Community API (CC BY-NC 4.0): FlowInExUSD",
+      "description": "USD-Wert des täglichen BTC-Zuflusses zu von Coin Metrics identifizierten Börsenadressen; USD-Werte beruhen auf dem BTC-Preis. Label-Abdeckung und Methodik können sich ändern."
+    },
+    {
+      "id": "exchange_outflow_usd",
+      "label": "Börsenabfluss USD",
+      "unit": "USD/Tag",
+      "category": "supply",
+      "frequency": "daily",
+      "sourceHint": "Coin Metrics Community API (CC BY-NC 4.0): FlowOutExUSD",
+      "description": "USD-Wert des täglichen BTC-Abflusses von durch Coin Metrics identifizierten Börsenadressen; USD-Werte beruhen auf dem BTC-Preis. Label-Abdeckung und Methodik können sich ändern."
+    },
+    {
+      "id": "exchange_balance_usd",
+      "label": "Börsenbestände USD",
+      "unit": "USD",
+      "category": "supply",
+      "frequency": "daily",
+      "sourceHint": "Coin Metrics Community API (CC BY-NC 4.0): SplyExUSD",
+      "description": "USD-Wert der am Tagesende von Coin Metrics identifizierten Börsenadressen gehaltenen BTC. Börsenadress-Abdeckung kann unvollständig sein und sich ändern."
+    },
+    {
+      "id": "return_ytd_pct",
+      "label": "Rendite seit Jahresbeginn",
+      "unit": "%",
+      "category": "performance",
+      "frequency": "daily",
+      "sourceHint": "Aus täglichem USD-Preis abgeleitet",
+      "description": "Änderung gegenüber dem letzten verfügbaren Preis am Ende des Vorjahres."
+    },
+    {
+      "id": "price_sma_200w_usd",
+      "label": "200-Wochen-Durchschnittspreis",
+      "unit": "USD/BTC",
+      "category": "market",
+      "frequency": "weekly",
+      "calendarType": "weekly_sunday_close",
+      "sourceHint": "Aus täglichem USD-Preis abgeleitet",
+      "description": "Arithmetischer Mittelwert der letzten 200 Sonntags-Schlusskurse; Ausgabe einmal pro Woche nach vollständiger Abdeckung."
+    },
+    {
+      "id": "liveliness",
+      "label": "Liveliness",
+      "unit": "ratio",
+      "category": "network",
+      "frequency": "daily",
+      "sourceHint": "Open Bitcoin Metrics (OBM)",
+      "description": "Kumulierte zerstörte Coin-Tage geteilt durch kumulierte erzeugte Coin-Tage nach OBM-Definition."
+    },
+    {
+      "id": "transaction_volume_btc",
+      "label": "Transaction Volume BTC",
+      "unit": "BTC/day",
+      "category": "network",
+      "frequency": "daily",
+      "sourceHint": "Open Bitcoin Metrics (OBM)",
+      "description": "Tägliche Summe der Werte aller Nicht-Coinbase-Transaktionsoutputs in BTC. Enthält Wechselgeld, Selbsttransfers und Verwahrstellenbewegungen und ist daher kein bereinigtes Zahlungsvolumen."
+    },
+    {
+      "id": "blockspace_utilization_pct",
+      "label": "Blockspace Utilization",
+      "unit": "%",
+      "category": "fees",
+      "frequency": "daily",
+      "sourceHint": "Lokal abgeleitet",
+      "description": "Tägliches Gesamtblockgewicht geteilt durch die Zahl der Blöcke und das Bitcoin-Konsenslimit von 4 Mio. WU pro Block. Zeigt durchschnittliche Auslastung je Block und ist ohne bestätigte Blöcke undefiniert.",
+      "acceptsSourceGaps": true
+    },
+    {
+      "id": "fx_usd_per_eur",
+      "label": "ECB USD per EUR",
+      "unit": "USD/EUR",
+      "category": "macro",
+      "frequency": "daily",
+      "calendarType": "business_daily",
+      "sourceHint": "Europäische Zentralbank",
+      "description": "Täglicher Referenzkurs der EZB, angegeben als US-Dollar je Euro; dient zur Umrechnung des BTC/USD-Preises."
+    },
+    {
+      "id": "transfer_count",
+      "label": "Transfer Count",
+      "unit": "transfers/day",
+      "category": "network",
+      "frequency": "daily",
+      "sourceHint": "Coin Metrics Community Data",
+      "description": "Coin Metrics TxTfrCnt. Transferzählung nach Anbieterdefinition; von bestätigten Transaktionen zu unterscheiden."
+    }
+  ],
+  "coreMetricIds": [
+    "active_addresses",
+    "addresses_nonzero_balance",
+    "block_interval_7d_min",
+    "block_reward_btc",
+    "block_weight_mwu",
+    "blocks_count",
+    "blocks_until_halving",
+    "blockspace_utilization_pct",
+    "cagr_3y_pct",
+    "coin_days_destroyed",
+    "difficulty",
+    "drawdown_ath",
+    "exchange_balance_btc",
+    "exchange_inflow_btc",
+    "exchange_netflow_btc",
+    "exchange_outflow_btc",
+    "fear_greed_index",
+    "fee_share_miner_revenue_pct",
+    "fees_average_usd",
+    "fees_total_btc",
+    "futures_open_interest_usd",
+    "hashprice_usd_ph_day",
+    "hashrate_eh_s",
+    "inflation_rate_pct",
+    "issued_btc_daily",
+    "liveliness",
+    "market_cap_usd",
+    "mayer_multiple",
+    "miner_revenue_usd",
+    "mvrv_ratio",
+    "nupl_pct",
+    "price_eur",
+    "price_sma_200d_usd",
+    "price_sma_200w_usd",
+    "price_usd",
+    "puell_multiple",
+    "realized_cap_usd",
+    "realized_price_usd",
+    "return_1d",
+    "return_1y",
+    "return_30d",
+    "return_7d",
+    "return_90d",
+    "return_ytd_pct",
+    "spot_volume_usd",
+    "supply_btc",
+    "transactions_count",
+    "utxo_count",
+    "volatility_30d",
+    "volatility_90d"
+  ],
+  "activeMetricIds": [
+    "active_addresses",
+    "addresses_nonzero_balance",
+    "block_interval_7d_min",
+    "block_reward_btc",
+    "block_weight_mwu",
+    "blocks_count",
+    "blocks_until_halving",
+    "blockspace_utilization_pct",
+    "cagr_3y_pct",
+    "coin_days_destroyed",
+    "difficulty",
+    "drawdown_ath",
+    "exchange_balance_btc",
+    "exchange_inflow_btc",
+    "exchange_netflow_btc",
+    "exchange_outflow_btc",
+    "fear_greed_index",
+    "fee_share_miner_revenue_pct",
+    "fees_average_usd",
+    "fees_total_btc",
+    "futures_open_interest_usd",
+    "hashprice_usd_ph_day",
+    "hashrate_eh_s",
+    "inflation_rate_pct",
+    "issued_btc_daily",
+    "liveliness",
+    "market_cap_usd",
+    "mayer_multiple",
+    "miner_revenue_usd",
+    "mvrv_ratio",
+    "nupl_pct",
+    "price_eur",
+    "price_sma_200d_usd",
+    "price_sma_200w_usd",
+    "price_usd",
+    "puell_multiple",
+    "realized_cap_usd",
+    "realized_price_usd",
+    "return_1d",
+    "return_1y",
+    "return_30d",
+    "return_7d",
+    "return_90d",
+    "return_ytd_pct",
+    "spot_volume_usd",
+    "supply_btc",
+    "transactions_count",
+    "utxo_count",
+    "volatility_30d",
+    "volatility_90d"
+  ]
+}

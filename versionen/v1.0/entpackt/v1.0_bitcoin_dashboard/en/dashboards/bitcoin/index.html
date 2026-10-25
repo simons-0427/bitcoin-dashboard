@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bitcoin price, network data and other metrics over time.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0c0c0f">
+  <title>Bitcoin dashboard | Market and network</title>
+  <link rel="icon" type="image/svg+xml" href="../../../images/favicons/favicon-1g-dotgrid.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../images/favicons/favicon-1g-dotgrid-32.png">
+  <link rel="apple-touch-icon" sizes="64x64" href="../../../images/favicons/favicon-1g-dotgrid-64.png">
+  <link rel="canonical" href="https://smstark-projekt.de/en/dashboards/bitcoin/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/site-header.css">
+  <link rel="stylesheet" href="assets/css/bitcoin.css?v=20261025-en-1">
+  <script src="../../../assets/site-header.js" defer></script>
+  <script src="assets/vendor/chart.umd.min.js?v=4.4.1"></script>
+<script type="module" src="assets/js/bitcoin.js?v=20261025-en-1"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="/en/" class="nav-logo" aria-label="Go to home page">sms<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/projects/">Projects</a></li>
+      <li><a href="/en/downloads">Downloads</a></li>
+      <li><a href="/en/project-pipeline">Project pipeline</a></li>
+      <li><a href="/en/vision">Vision</a></li>
+      <li><a href="/en/knowledge/">Knowledge</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button type="button" class="language-switch" data-language-target="/dashboards/bitcoin/" data-language-file-target="../../../dashboards/bitcoin/index.html" aria-label="Switch to German" title="Switch to German"><span class="language-option" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option language-option-active" aria-hidden="true">EN</span></button>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="nav-github"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>GitHub</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/projects/">Projects</a></li>
+      <li><a href="/en/downloads">Downloads</a></li>
+      <li><a href="/en/project-pipeline">Project pipeline</a></li>
+      <li><a href="/en/vision">Vision</a></li>
+      <li><a href="/en/knowledge/">Knowledge</a></li>
+      <li class="mobile-language-row"><span class="mobile-language-label">Language</span><button type="button" class="language-switch" data-language-target="/dashboards/bitcoin/" data-language-file-target="../../../dashboards/bitcoin/index.html" aria-label="Switch to German" title="Switch to German"><span class="language-option" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option language-option-active" aria-hidden="true">EN</span></button></li>
+    </ul>
+  </div>
+
+  <main id="main-content" class="dashboard-shell">
+    <div class="breadcrumbs" aria-label="Breadcrumb navigation"><a href="/en/">Home</a><span>/</span><a href="/en/#dashboards">Dashboards</a><span>/</span><span aria-current="page">Bitcoin</span></div>
+
+    <header class="page-heading">
+      <div class="page-heading__content">
+        <div class="page-heading__identity">
+          <span class="bitcoin-mark" aria-label="Bitcoin"><span aria-hidden="true">₿</span></span>
+          <div>
+            <p class="eyebrow">Bitcoin / Market and network</p>
+            <h1>Bitcoin dashboard</h1>
+          </div>
+        </div>
+        <p>Historical price, on-chain data and mining activity.</p>
+        <div class="page-heading__meta">
+        <div class="data-status" role="status" aria-live="polite">
+          <span class="status-dot" aria-hidden="true"></span>
+          <div class="data-status__copy"><strong id="data-status">Checking data</strong><span id="data-status-detail">Loading available metrics.</span></div>
+        </div>
+        <label class="bitcoin-currency-select" for="display-currency">
+          <span class="sr-only">Display currency</span>
+          <select id="display-currency" aria-label="Display currency" aria-describedby="currency-note" disabled>
+            <option value="original">Original</option>
+            <option value="EUR">€ EUR</option>
+            <option value="GBP">£ GBP</option>
+            <option value="USD" selected>$ USD</option>
+            <option value="JPY">¥ JPY</option>
+            <option value="CNY">¥ CNY</option>
+          </select>
+        </label>
+        </div>
+      </div>
+    </header>
+
+    <section class="overview section-block" aria-labelledby="overview-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Market overview</p><h2 id="overview-title">Latest observations</h2><p>Value, selected comparison and observation date.</p></div>
+        <span class="section-count">10 metrics</span>
+      </div>
+      <div id="overview-grid" class="overview-grid" aria-label="Bitcoin metrics at a glance"></div>
+      <div class="card-change-toolbar">
+        <p id="card-change-description">Relative change versus the immediately preceding stored value.</p>
+        <div class="card-change-settings" aria-label="Card change display settings">
+          <label for="card-change-mode"><span class="control-label">Display</span><select id="card-change-mode">
+            <option value="relative">Relative</option><option value="absolute">Absolute</option>
+          </select></label>
+          <label for="card-change-period"><span class="control-label">Comparison</span><select id="card-change-period">
+            <option value="previous">Previous data point</option><option value="1y">1 year</option>
+            <option value="3y">3 years</option><option value="10y">10 years</option><option value="max">All time</option>
+          </select></label>
+        </div>
+      </div>
+    </section>
+
+    <section id="trend" class="section-block" aria-labelledby="trend-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Chart</p><h2 id="trend-title">History</h2></div>
+      </div>
+      <div class="chart-panel">
+      <div class="chart-panel__top">
+        <div><div class="chart-title-row"><span id="chart-category" class="topic-pill">Market</span><h2 id="chart-title">Bitcoin price</h2></div><p id="chart-description" class="chart-description">Daily reference price in US dollars.</p></div>
+        <div class="chart-controls">
+          <div class="scale-controls" role="group" aria-label="Chart scale" aria-describedby="chart-scale-note">
+            <span>Scale</span>
+            <button type="button" data-chart-scale="linear" class="is-active" aria-pressed="true" title="Linear value axis" disabled>Nominal</button>
+            <button type="button" data-chart-scale="logarithmic" aria-pressed="false" title="Logarithmic value axis" disabled>Logarithmic</button>
+          </div>
+        <div class="range-controls" aria-label="Chart period"><span>Period</span><button type="button" data-range="1" disabled>1Y</button><button type="button" data-range="3" disabled>3Y</button><button type="button" data-range="5" disabled>5Y</button><button type="button" data-range="10" disabled>10Y</button><button type="button" data-range="max" class="is-active" disabled>MAX</button></div>
+          <p id="chart-scale-note" class="chart-scale-note" role="status" hidden></p>
+        </div>
+      </div>
+      <div class="chart-stats"><div><span id="stat-latest-label">Latest value</span><strong id="stat-latest">No data</strong><small id="stat-latest-date">As of: not imported yet</small></div><div><span id="stat-change-label">Change over period</span><strong id="stat-change">No data</strong><small id="stat-change-note">First to last stored observation</small></div><div><span>Coverage</span><strong id="stat-coverage">Unknown</strong><small id="stat-coverage-note">Assessed separately for each metric</small></div></div>
+      <div id="chart-area" class="chart-area is-empty" role="img" aria-label="Checking Bitcoin time series.">
+        <canvas id="chart-canvas" class="chart-canvas" aria-label="Bitcoin metrics over time" hidden></canvas>
+        <div id="chart-empty" class="chart-empty"><strong id="chart-empty-title">Checking data</strong><p id="chart-empty-description">Loading stored observations.</p></div>
+      </div>
+      <div id="chart-details" class="chart-details" hidden></div>
+      <p id="chart-hover-help" class="chart-hover-help">Hover or tap to inspect values. Tab to the chart and use the arrow keys to move through observations.</p>
+    <div class="chart-panel__bottom"><div><span>Source</span><strong id="chart-source">Not specified yet</strong><a id="chart-source-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Dataset</a><small id="chart-attribution"></small><a id="chart-fx-link" href="/en/dashboards/world-markets/?metric=eurusd" target="_blank" rel="noopener noreferrer" hidden>Historical World Market exchange rates</a><a id="chart-license-link" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer" hidden>CC BY-NC 4.0</a></div><div><span>Frequency</span><strong id="chart-frequency">Daily</strong></div><div><span>Methodology</span><strong id="chart-method">Source review pending</strong></div></div>
+      </div>
+    </section>
+
+    <section class="catalog section-block" aria-labelledby="catalog-title">
+      <div class="section-heading">
+          <div><p class="eyebrow">Data catalogue</p><h2 id="catalog-title">Metrics</h2><p>Bitcoin metrics from freely accessible sources. Each metric shows its unit, observation date and change.</p></div>
+        <span class="section-count" id="catalog-count">Loading catalogue</span>
+      </div>
+      <div class="catalog-toolbar"><label class="search-field" for="metric-search"><span class="sr-only">Search metrics</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg><input id="metric-search" type="search" placeholder="Search metrics" autocomplete="off"></label><div class="category-filters" id="category-filters" aria-label="Metric groups"></div></div>
+      <div id="catalog-groups" class="catalog-groups"></div>
+      <p id="empty-results" class="empty-results" hidden>No matching metric found.</p>
+      <p class="catalog-note" id="catalog-note">Sources, coverage and availability are assessed separately for each metric.</p>
+    </section>
+    <noscript><p class="noscript-message">JavaScript must be enabled to select metrics.</p></noscript>
+    <p id="currency-note" class="currency-note" role="status">Monetary values default to US dollars.</p>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/en/" class="footer-logo">sms<span>.</span></a>
+        <p>Finance tools, dashboards and programming projects by Simon Stark.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="/en/projects/">Projects</a></li>
+          <li><a href="/en/downloads">Downloads</a></li>
+          <li><a href="/en/project-pipeline">Project pipeline</a></li>
+          <li><a href="/en/vision">Vision</a></li>
+          <li><a href="/en/knowledge/">Knowledge</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="/en/legal-notice">Legal notice</a></li>
+          <li><a href="/en/privacy">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Simon Stark</span>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">github.com/simons-0427</a>
+    </div>
+  </footer>
+</body>
+</html>

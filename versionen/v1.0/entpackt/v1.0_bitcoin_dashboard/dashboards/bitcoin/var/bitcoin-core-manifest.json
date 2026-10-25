@@ -1,0 +1,469 @@
+{
+  "generatedAt": "2026-10-22T15:24:38.017Z",
+  "cutoffInclusive": "2026-10-21",
+  "activeMetricIds": [
+    "price_usd",
+    "price_eur",
+    "market_cap_usd",
+    "spot_volume_usd",
+    "price_sma_200d_usd",
+    "price_sma_200w_usd",
+    "mayer_multiple",
+    "return_1d",
+    "return_7d",
+    "return_30d",
+    "return_90d",
+    "return_1y",
+    "return_ytd_pct",
+    "cagr_3y_pct",
+    "volatility_30d",
+    "volatility_90d",
+    "drawdown_ath",
+    "mvrv_ratio",
+    "realized_cap_usd",
+    "realized_price_usd",
+    "nupl_pct",
+    "puell_multiple",
+    "transactions_count",
+    "active_addresses",
+    "addresses_nonzero_balance",
+    "utxo_count",
+    "block_weight_mwu",
+    "blockspace_utilization_pct",
+    "supply_btc",
+    "issued_btc_daily",
+    "inflation_rate_pct",
+    "block_reward_btc",
+    "blocks_until_halving",
+    "hashrate_eh_s",
+    "difficulty",
+    "blocks_count",
+    "block_interval_7d_min",
+    "miner_revenue_usd",
+    "hashprice_usd_ph_day",
+    "fees_total_btc",
+    "fees_average_usd",
+    "fee_share_miner_revenue_pct",
+    "exchange_balance_btc",
+    "exchange_inflow_btc",
+    "exchange_outflow_btc",
+    "exchange_netflow_btc",
+    "coin_days_destroyed",
+    "liveliness",
+    "fear_greed_index",
+    "futures_open_interest_usd"
+  ],
+  "observations": 290291,
+  "metricCount": 50,
+  "master": "bitcoin-core-master.csv",
+  "masterSha256": "30c440fef0dfd7b8e6da4c4b2234658122871f9af7dd5ab2ba2f38b754cf33f7",
+  "inputRows": 172056,
+  "revisionsArchived": 0,
+  "metrics": {
+    "active_addresses": {
+      "count": 6501,
+      "first": "2009-01-03",
+      "last": "2026-10-21",
+      "sources": {
+        "coinmetrics_community_btc": 6501
+      }
+    },
+    "addresses_nonzero_balance": {
+      "count": 6501,
+      "first": "2009-01-03",
+      "last": "2026-10-21",
+      "sources": {
+        "coinmetrics_community_btc": 6501
+      }
+    },
+    "block_weight_mwu": {
+      "count": 6497,
+      "first": "2009-01-03",
+      "last": "2026-10-17",
+      "sources": {
+        "open_bitcoin_metrics_obm": 6497
+      }
+    },
+    "blocks_count": {
+      "count": 6501,
+      "first": "2009-01-03",
+      "last": "2026-10-21",
+      "sources": {
+        "coinmetrics_community_btc": 6501
+      }
+    },
+    "coin_days_destroyed": {
+      "count": 6497,
+      "first": "2009-01-03",
+      "last": "2026-10-17",
+      "sources": {
+        "open_bitcoin_metrics_obm": 6497
+      }
+    },
+    "difficulty": {
+      "count": 6492,
+      "first": "2009-01-03",
+      "last": "2026-10-17",
+      "sources": {
+        "open_bitcoin_metrics_obm": 6492
+      }
+    },
+    "exchange_balance_btc": {
+      "count": 5660,
+      "first": "2011-04-24",
+      "last": "2026-10-21",
+      "sources": {
+        "coinmetrics_community_btc": 5660
+      }
+    },
+    "exchange_inflow_btc": {
+      "count": 5660,
+      "first": "2011-04-24",
+      "last": "2026-10-21",
+      "sources": {
+        "coinmetrics_community_btc": 5660
+      }
+    },
+    "exchange_outflow_btc": {
+      "count": 5660,
+      "first": "2011-04-24",
+      "last": "2026-10-21",
+      "sources": {
+        "coinmetrics_community_btc": 5660
+      }
+    },
+    "fear_greed_index": {
+      "count": 3181,
+      "first": "2018-02-01",
+      "last": "2026-10-21",
+      "sources": {
+        "alternative_me_fng": 3181
+      }
+    },
+    "fees_total_btc": {
+      "count": 6501,
+      "first": "2009-01-03",
+      "last": "2026-10-21",
+      "sources": {
+        "coinmetrics_community_btc": 6501
+      }
+    },
+    "futures_open_interest_usd": {
+      "count": 461,
+      "first": "2017-12-19",
+      "last": "2026-10-13",
+      "sources": {
+        "cftc_cot_legacy": 461
+      }
+    },
+    "hashrate_eh_s": {
+      "count": 6495,
+      "first": "2009-01-09",
+      "last": "2026-10-21",
+      "sources": {
+        "coinmetrics_community_btc": 6495
+      }
+    },
+    "liveliness": {
+      "count": 6497,
+      "first": "2009-01-03",
+      "last": "2026-10-17",
+      "sources": {
+        "open_bitcoin_metrics_obm": 6497
+      }
+    },
+    "mvrv_ratio": {
+      "count": 5940,
+      "first": "2010-07-18",
+      "last": "2026-10-21",
+      "sources": {
+        "coinmetrics_community_btc": 5940
+      }
+    },
+    "price_usd": {
+      "count": 5940,
+      "first": "2010-07-18",
+      "last": "2026-10-21",
+      "sources": {
+        "coinmetrics_community_btc": 5940
+      }
+    },
+    "spot_volume_usd": {
+      "count": 5940,
+      "first": "2010-07-18",
+      "last": "2026-10-21",
+      "sources": {
+        "coinmetrics_community_btc": 5940
+      }
+    },
+    "supply_btc": {
+      "count": 6501,
+      "first": "2009-01-03",
+      "last": "2026-10-21",
+      "sources": {
+        "coinmetrics_community_btc": 6501
+      }
+    },
+    "transactions_count": {
+      "count": 6501,
+      "first": "2009-01-03",
+      "last": "2026-10-21",
+      "sources": {
+        "coinmetrics_community_btc": 6501
+      }
+    },
+    "utxo_count": {
+      "count": 6492,
+      "first": "2009-01-03",
+      "last": "2026-10-17",
+      "sources": {
+        "open_bitcoin_metrics_obm": 6492
+      }
+    },
+    "drawdown_ath": {
+      "count": 5940,
+      "first": "2010-07-18",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5940
+      }
+    },
+    "return_1d": {
+      "count": 5939,
+      "first": "2010-07-19",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5939
+      }
+    },
+    "return_7d": {
+      "count": 5933,
+      "first": "2010-07-25",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5933
+      }
+    },
+    "return_30d": {
+      "count": 5910,
+      "first": "2010-08-17",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5910
+      }
+    },
+    "volatility_30d": {
+      "count": 5910,
+      "first": "2010-08-17",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5910
+      }
+    },
+    "return_90d": {
+      "count": 5850,
+      "first": "2010-10-16",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5850
+      }
+    },
+    "volatility_90d": {
+      "count": 5850,
+      "first": "2010-10-16",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5850
+      }
+    },
+    "return_ytd_pct": {
+      "count": 5773,
+      "first": "2011-01-01",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5773
+      }
+    },
+    "price_sma_200d_usd": {
+      "count": 5741,
+      "first": "2011-02-02",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5741
+      }
+    },
+    "mayer_multiple": {
+      "count": 5741,
+      "first": "2011-02-02",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5741
+      }
+    },
+    "return_1y": {
+      "count": 5575,
+      "first": "2011-07-18",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5575
+      }
+    },
+    "cagr_3y_pct": {
+      "count": 4844,
+      "first": "2013-07-18",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 4844
+      }
+    },
+    "price_sma_200w_usd": {
+      "count": 650,
+      "first": "2014-05-11",
+      "last": "2026-10-18",
+      "sources": {
+        "derived_bitcoin_metrics": 650
+      }
+    },
+    "market_cap_usd": {
+      "count": 5940,
+      "first": "2010-07-18",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5940
+      }
+    },
+    "realized_cap_usd": {
+      "count": 5940,
+      "first": "2010-07-18",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5940
+      }
+    },
+    "realized_price_usd": {
+      "count": 5940,
+      "first": "2010-07-18",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5940
+      }
+    },
+    "nupl_pct": {
+      "count": 5940,
+      "first": "2010-07-18",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5940
+      }
+    },
+    "price_eur": {
+      "count": 5940,
+      "first": "2010-07-18",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5940
+      }
+    },
+    "issued_btc_daily": {
+      "count": 6495,
+      "first": "2009-01-09",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 6495
+      }
+    },
+    "block_reward_btc": {
+      "count": 6495,
+      "first": "2009-01-09",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 6495
+      }
+    },
+    "blocks_until_halving": {
+      "count": 6495,
+      "first": "2009-01-09",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 6495
+      }
+    },
+    "inflation_rate_pct": {
+      "count": 6495,
+      "first": "2009-01-09",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 6495
+      }
+    },
+    "fee_share_miner_revenue_pct": {
+      "count": 6495,
+      "first": "2009-01-09",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 6495
+      }
+    },
+    "miner_revenue_usd": {
+      "count": 5940,
+      "first": "2010-07-18",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5940
+      }
+    },
+    "fees_average_usd": {
+      "count": 5940,
+      "first": "2010-07-18",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5940
+      }
+    },
+    "hashprice_usd_ph_day": {
+      "count": 5940,
+      "first": "2010-07-18",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5940
+      }
+    },
+    "puell_multiple": {
+      "count": 5576,
+      "first": "2011-07-17",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5576
+      }
+    },
+    "block_interval_7d_min": {
+      "count": 6495,
+      "first": "2009-01-09",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 6495
+      }
+    },
+    "exchange_netflow_btc": {
+      "count": 5660,
+      "first": "2011-04-24",
+      "last": "2026-10-21",
+      "sources": {
+        "derived_bitcoin_metrics": 5660
+      }
+    },
+    "blockspace_utilization_pct": {
+      "count": 6491,
+      "first": "2009-01-09",
+      "last": "2026-10-17",
+      "sources": {
+        "derived_bitcoin_metrics": 6491
+      }
+    }
+  },
+  "notes": [
+    "UTC completed days only; no interpolation.",
+    "OBM and CFTC retain actual publication lag.",
+    "Coin Metrics inputs require non-commercial use and attribution."
+  ]
+}

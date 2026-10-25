@@ -1,0 +1,7 @@
+dashboards/bitcoin/config/bitcoin.php
+dashboards/bitcoin/config/bitcoin-web-cron.json
+dashboards/bitcoin/var/*
+!dashboards/bitcoin/var/.htaccess
+!dashboards/bitcoin/var/bitcoin-core-master.csv
+!dashboards/bitcoin/var/bitcoin-core-inputs.csv
+!dashboards/bitcoin/var/bitcoin-core-manifest.json
