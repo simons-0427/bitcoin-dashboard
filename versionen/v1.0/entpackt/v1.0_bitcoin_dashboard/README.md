@@ -17,6 +17,7 @@ Die Ordnerstruktur entspricht der Website:
 
 ```text
 assets/                         Gemeinsamer Header
+images/favicons/                 Benötigte Website-Symbole
 dashboards/bitcoin/             Deutsche Oberfläche, PHP-API, Importe und Daten
 en/dashboards/bitcoin/          Englische Oberfläche mit gemeinsamer Bitcoin-API
 ```
@@ -27,7 +28,7 @@ Die Währungsumrechnung verwendet wie die Originalinstallation das parallel inst
 
 ## Neue Installation
 
-1. Den Inhalt dieses Paketordners in das Web-Stammverzeichnis kopieren. Die Ordner `assets`, `dashboards` und `en` müssen auf derselben Ebene liegen. Bei einer vorhandenen Website gemeinsame Header-Dateien vorher vergleichen.
+1. Den Inhalt dieses Paketordners in das Web-Stammverzeichnis kopieren. Die Ordner `assets`, `images`, `dashboards` und `en` müssen auf derselben Ebene liegen. Bei einer vorhandenen Website gemeinsame Header-Dateien vorher vergleichen.
 2. Eine eigene MySQL-Datenbank und einen Datenbankbenutzer bereitstellen.
 3. `dashboards/bitcoin/config/bitcoin.example.php` nach `bitcoin.php` im selben Ordner kopieren und die eigenen Datenbankdaten eintragen.
 4. In dieser Datenbank zuerst `dashboards/bitcoin/sql/001_schema.sql`, danach `002_active_catalog.sql` ausführen. Diese Dateien bilden die Basis für eine neue Installation. Bei einer bestehenden Installation vorher eine Sicherung erstellen und die vorhandene Migration berücksichtigen.
